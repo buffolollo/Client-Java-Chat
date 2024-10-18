@@ -1,4 +1,5 @@
 src/main/java/it/buffolollo/ConnectionInfo.java
+messages.db
 
 # Compiled class file
 *.class
