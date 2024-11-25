@@ -287,4 +287,19 @@ public class Client {
         }
     }
 
+    /**
+     * Closes the client socket connection.
+     * 
+     * This method closes the client socket connection to the server.
+     * If an I/O error occurs while closing the socket, an error message is printed
+     * indicating the error.
+     */
+    public void close() {
+        try {
+            clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

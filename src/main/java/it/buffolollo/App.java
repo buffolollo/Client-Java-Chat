@@ -183,6 +183,10 @@ public class App {
         }
     }
 
+    public static void disconnect() {
+        client.close();
+    }
+
     public static void main(String[] args) {
         gui = new Gui("Java Chat");
 

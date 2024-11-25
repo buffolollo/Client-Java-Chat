@@ -234,6 +234,22 @@ public class Gui {
         });
         bottomPanel.add(sendButton, BorderLayout.EAST);
 
+        JButton logoutButton = new JButton("Logout");
+        logoutButton.setFont(new Font("Arial", Font.BOLD, 14));
+        logoutButton.setBackground(Color.RED);
+        logoutButton.setForeground(Color.WHITE);
+        logoutButton.setOpaque(true);
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                App.disconnect();
+
+                System.exit(0);
+            }
+        });
+
+        bottomPanel.add(logoutButton, BorderLayout.WEST);
+
         frame.setVisible(true);
     }
 
@@ -274,7 +290,6 @@ public class Gui {
     // che è il thread principale per la gestione degli eventi in Swing
     // mi serve per non bloccare l'interfaccia grafica durante l'aggiunta di un
     // messaggio
-    // https://docs.oracle.com/javase%2Ftutorial%2Fuiswing%2F%2F/concurrency/dispatch.html
     public void aggiungiMsg(String msg) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
